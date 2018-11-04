@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.joyo.dao.SuccessKilledDao">
+    <insert id="insertSuccessKilled" >
+        /*主键冲突的时候不报错，程序到时候返回0*/
+        INSERT IGNORE INTO success_seckill(seckill_id, user_phone,state)
+                VALUES (#{seckillId},#{userPhone},0)
+    </insert>
+
+    <select id="queryByIdWithSeckill" resultType="SuccessKilled">
+        /*根据id查询SuccessKilled并携带Seckill实体*/
+        <!--如何告诉Mybatis把结果映射到SuccesssKilled同时映射到其中的Seckill对象-->
+        SELECT
+          sk.seckill_id,
+          sk.user_phone,
+          sk.create_time,
+          sk.state,
+          s.seckill_id "seckill.seckill_id",
+          s.name "seckill.name",
+          s.number "seckill.number",
+          s.start_time "seckill.start_time",
+          s.end_time "seckill.end_time",
+          s.create_time "seckill.create_time"
+        FROM success_seckill sk
+        INNER JOIN seckill s ON sk.seckill_id = s.seckill_id
+        WHERE sk.seckill_id = #{seckillId}
+
+    </select>
+
+</mapper>

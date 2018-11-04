@@ -1,0 +1,24 @@
+# Package Files #
+
+.DS_Store
+
+*.iml
+
+*.class
+
+*.jar
+
+*.war
+
+*.ear
+
+# Mobile Tools for Java (J2ME)
+
+.mtj
+.tmp/
+
+out/
+
+.idea/
+
+target/

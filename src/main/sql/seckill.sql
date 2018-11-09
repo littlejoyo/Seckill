@@ -5,14 +5,14 @@ DELIMITER  $$ -- console ; 转换为 $$
 -- 参数: in　输入参数; out 输出参数
 -- row_count():返回上一条修改类型的sql(delete,update,insert)的影响行数
 -- row_count(): 0:未修改数据;>0 :表示修改的行数;<0:sql错误/未执行修改的sql
-CREATE  PROCEDURE  `test_mysql`.`execute_seckill`
+CREATE  PROCEDURE  `seckill`.`execute_seckill`
   (in v_seckill_id bigint,in v_phone bigint,in v_kill_time TIMESTAMP ,out r_result int)
 
   BEGIN
 
     DECLARE insert_count int DEFAULT 0;
     START TRANSACTION ;
-    INSERT ignore INTO success_killed(seckill_id,user_phone,create_time,state)VALUES(v_seckill_id,v_phone,v_kill_time,1);
+    INSERT ignore INTO success_seckill(seckill_id,user_phone,create_time,state)VALUES(v_seckill_id,v_phone,v_kill_time,1);
 
     SELECT ROW_COUNT() INTO insert_count;
     IF(insert_count = 0)THEN

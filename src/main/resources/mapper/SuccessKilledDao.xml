@@ -25,7 +25,7 @@
           s.create_time "seckill.create_time"
         FROM success_seckill sk
         INNER JOIN seckill s ON sk.seckill_id = s.seckill_id
-        WHERE sk.seckill_id = #{seckillId}
+        WHERE sk.seckill_id = #{seckillId} AND sk.user_phone = #{uesrPhone}
 
     </select>
 

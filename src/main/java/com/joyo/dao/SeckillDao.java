@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 public interface SeckillDao {
     /**
@@ -31,4 +32,10 @@ public interface SeckillDao {
 
     /*Java中没有保存形参的记录，如果存在两个及以上的参数的时候要添加注解告诉mybatis参数*/
     List<Seckill> queryAll (@Param("offset") int offset , @Param("limit")int limit);
+
+    /**
+     * 使用存储过程执行秒杀
+     * @param paramMap
+     */
+    void killByProcedure(Map<String,Object> paramMap);
 }

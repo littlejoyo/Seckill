@@ -30,3 +30,12 @@
 
 ### 使用存储过程进行优化
 ![存储过程](https://github.com/littlejoyo/PictureCache/blob/master/images/seckill/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E4%BC%98%E5%8C%96.png)
+
+### 项目各个层次设计到的技术重点
+![](https://github.com/littlejoyo/PictureCache/blob/master/images/seckill/%E6%95%B0%E6%8D%AEdao%E5%B1%82.jpg)
+![](https://github.com/littlejoyo/PictureCache/blob/master/images/seckill/%E4%B8%9A%E5%8A%A1%E5%B1%82.png)
+![](https://github.com/littlejoyo/PictureCache/blob/master/images/seckill/web%E5%B1%82%E8%AE%BE%E8%AE%A1.png)
+![](https://github.com/littlejoyo/PictureCache/blob/master/images/seckill/%E5%B9%B6%E5%8F%91%E4%BC%98%E5%8C%96.png)
+
+
+
